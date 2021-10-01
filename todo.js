@@ -5,7 +5,7 @@ let val = process.argv[3];
 //!fs
 const fs = require("fs");
 
-// //!get the data from file
+// get the data from file
 const getDataOfFile = () => {
   let data = fs.readFileSync("./todo.txt");
   return JSON.parse(data);
@@ -112,7 +112,7 @@ if (command === undefined || command === "help") {
   else if (command === "done") {
     let data = getDataOfFile();
     if (val === undefined) {
-      console.log("Error: Missing NUMBER for marking todo as done.");
+      console.log("Error: Missing a NUMBER for marking todo as done.");
     } else if (val < 1 || val > data.length) {
       console.log(`Error: todo #${val} does not exist.`);
     } else {
